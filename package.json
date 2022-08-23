@@ -9,7 +9,6 @@
     "server": "cd server nodemon server.js --ignore client",
     "client": "cd client && npm start",
     "install": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
-    "heroku-prebuild": "npm install --dev",
     "dev": "webpack-dev-server",
     "build": "webpack --mode production",
     "start": "webpack --watch"
