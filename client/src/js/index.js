@@ -20,3 +20,13 @@ window.addEventListener('load', function () {
     document.getElementById('bearThumbnail').src = Bear;
     document.getElementById('dogThumbnail').src = Dog;
   });
+
+// Import 
+import { initdb } from './database';
+
+window.addEventListener('load', function() {
+  initdb();
+  document.getElementById('logo').src = Logo;
+  document.getElementById('bearThumbnail').src = Bear;
+  document.getElementById('dogThumbnail').src = Dog;
+});
