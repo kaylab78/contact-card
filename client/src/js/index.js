@@ -15,7 +15,7 @@ import Bear from "../images/bear.png";
 import Dog from "../images/dog.png";
 
 // Import functions
-import { initdb, getDb, postDb } from "./database";
+import { initdb, getDb, postDb, deleteDb } from "./database";
 import { fetchCards } from "./cards";
 
 // On load event listener
@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
   document.getElementById("dogThumbnail").src = Dog;
 });
 
-import { toggleForm, clearForm } from './form';
+import { toggleForm, clearForm } from "./form";
 
 // Form functionality
 const form = document.getElementById("formToggle");
@@ -68,3 +68,12 @@ form.addEventListener("submit", (event) => {
   // Reload the DOM
   fetchCards();
 });
+
+window.deleteCard = (e) => {
+  // Grabs the id from the button element attached to the contact card.
+  let id = parseInt(e.id);
+  // Delete the card
+  deleteDb(id);
+  // Reload the DOM
+  fetchCards();
+};
